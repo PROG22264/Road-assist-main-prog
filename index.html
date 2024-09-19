@@ -5,114 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image" href="web logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Speedy Assist</title>
 
     <style>
-        html{
-    scroll-behavior: smooth;
-}
-        body{
+        /* Base styles */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
             font-family: "Poppins", sans-serif;
-            background-color: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        nav{
+        /* Navigation styles */
+        nav {
             height: 60px;
             position: sticky;
             display: flex;
             align-items: center;
             justify-content: space-around;
-            background-color: none;
-            top:0;
-            overflow: hidden;
+            top: 0;
+            z-index: 1000;
             background: rgba(255, 255, 255, 0.12);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(6.2px);
--webkit-backdrop-filter: blur(6.2px);
-border: 1px solid rgba(255, 255, 255, 0.46);
+            backdrop-filter: blur(6.2px);
+            -webkit-backdrop-filter: blur(6.2px);
+            border: 1px solid rgba(255, 255, 255, 0.46);
         }
 
-        nav .links{
+        nav .links {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             gap: 25px;
         }
 
-        nav .links a{
+        nav .links a {
             color: #000;
             text-decoration: none;
             font-weight: 500;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
         
-        .logo a h2{
-            color: #000000;
-            font-family: "Poppins", sans-serif;
-           font-weight: 700;
-           font-style: normal;
-            font-size:  30px;
-        }
-
-        .logo a{
-            text-decoration: none;
-        }
-
-        .back-block{
-            margin-top: 10px;
-            height: 800px;
-            width: 100%;
-            border-radius: 15px;
-         background: rgb(255,255,255);
-            background: linear-gradient(0deg, rgba(255,255,255,1) 13%, rgba(255,205,0,1) 61%, rgba(255,188,0,1) 100%); 
-        }
-
-        .main{
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin-top: -650px;
-        }
-        .main img{
-            height: 100%;
-            width: 380px;
-          
-        }
-
-        .head-text h1{
-            color: #ffffff;
-            font-family: "Poppins", sans-serif;
-            font-weight: 700;
-            font-style: normal;
-            font-size:  60px;
-        }
-        .head-text h2{
+        nav button, .popup-content button{
             color: #000;
-            font-family: "Poppins", sans-serif;
-           font-weight: 500;
-           font-style: normal;
-            font-size:  20px;
-            margin-top: -40px;
-        }
-
-        .head-text button{
-            font-size: 20px;
-            color: #000;
-            margin-top: 15px;
-            background: #ffd53b0e;
-border-radius: 20px;
-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.438);
-border: 1px solid rgba(255, 255, 255, 0.527);
+            background-color: #ffb73b;
+            padding:10px 20px 10px ;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
         }
 
         .popup {
@@ -152,166 +95,237 @@ border: 1px solid rgba(255, 255, 255, 0.46);
     border: none;
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.121);
 }
-.navlinks button{
-    color: #fff;
-    background-color: #000;
-    border-radius: 50px;
-    border: none;
-    padding: 0px  20px 0px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-}
 
- button{
-    color: #000;
-    background-color: #ffb73b;
-    border-radius: 50px;
-    border: none;
-    padding: 10px  20px 10px 20px;
-    cursor: pointer;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
- }
+        .logo a h2 {
+            color: #280f33;
+            font-weight: 700;
+            font-size: 30px;
+            margin: 0;
+        }
 
- .work-comp{
-    background-color: #ffffff08;
-    border-radius: 10px;
-    margin-top: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: none;
-    padding: 30px;
- }
+        .back-block {
+            border-radius: 20px;
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(0deg, rgba(255,255,255,1) 13%, rgba(255,205,0,1) 61%, rgba(255,188,0,1) 100%);
+        }
 
- .work-comp img{
-    height: 30px;
-    
- }
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 20px;
+            flex-wrap: wrap;
+            margin-top: -550px;
+        }
 
- .comp-img{
-    
-     background-color: none;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-    gap: 50px;
- }
+        .main img {
+            
+            max-width: 40%;
+            height: auto;
+        }
 
- .info-product{
-    background-color: none;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-around;
-    padding: 10px;
-    gap: 50px;
- }
+        .head-text h1 {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
 
- .card{
-    display: flex;
-    flex-direction: column;
-    background-color: #000000e4;
-    height: 180px;
-    width:250px;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 100px;
- }
+        .head-text h2 {
+            color: #000;
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
 
- .card i{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 0.5px solid #fff;
-    border-bottom-style:groove;
-    border-bottom-color: #ffb73b;
-    margin-top: -30px;
- }
+        .head-text button {
+            font-size: 1rem;
+            color: #000;
+            margin-top: 15px;
+            background: rgba(255, 213, 59, 0.05);
+            border-radius: 20px;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.438);
+            border: 1px solid rgba(255, 255, 255, 0.527);
+            padding: 10px 20px;
+            cursor: pointer;
+        }
 
- .card h1{
-    display: none;
- }
+        /* Work component styles */
+        .work-comp {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
 
- .card button{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    Color: #ffb73b;
-    font-size: 15px;
-    background-color: #1c1c1c;
-    box-shadow: 0px 4px 10px 0px #000000;
-    border-radius: 50px;
-    padding: 10px;
-    font-weight: 500;
-    width: 250px;
-    margin-top: 20px;
- }
+        .comp-img {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            width: 100%;
+        }
 
- .card3{
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    background-color: #000000e4;
-    height: 180px;
-    width:250px;
-    border-radius: 10px;
-    padding: 10px;
- }
+        .comp-img img {
+            height: 30px;
+            width: auto;
+        }
 
- .card3 h1{
-    display: none;
- }
+        /* Info product styles */
+        .info-product {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
 
- .card3 h2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    Color: #ffb73b;
-    font-size: 90px;
-    font-weight: 600;
-    border-bottom: 0.5px solid #fff;
-    border-bottom-style:groove;
-    border-bottom-color: #ffb73b;
-    margin-top: -38px;
- }
- .card3 button{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    Color: #ffb73b;
-    background-color: #1c1c1c;;
-    border-radius: 50px;
-    font-size: 15px;
-    padding: 10px;
-    font-weight: 500;
-    margin-top: -55px;
-    width: 250px;
-    box-shadow: 0px 4px 10px 0px #000000;
-    
- }
+        .card, .card3 {
+            display: flex;
+            flex-direction: column;
+            background-color: #000000d8;
+            height: 250px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 10px auto;
+        }
 
- .card3 h2 span{
-    margin-left: 3px;
-    color: greenyellow;
- }
+        .card3 h2{
+            color: #fff;
+        }
 
+        .card i, .card3 h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 0.5px solid #ffb73b;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
 
- ::-webkit-scrollbar{
+        .card h1, .card3 h1 {
+            color: #fff;
+            font-size: 1rem;
+            text-align: center;
+            flex-grow: 1;
+            font-weight: 300;
+        }
+
+        .card button, .card3 button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffb73b;
+            background-color: #1c1c1c;
+            box-shadow: 0px 6px 10px 0px #000000;
+            border-radius: 50px;
+            padding: 10px;
+            font-weight: 500;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            margin-top: -10px
+        }
+
+        /* Whatsapp button styles */
+        .whatsapp {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 200px;
+            background-color: #000;
+            border: 1.5px solid #000;
+            border-radius: 100px;
+            border-bottom-left-radius: 6px;
+            padding: 6px;
+        }
+
+        .whatsapp h1 {
+            font-size: 13px;
+            color: #fff;
+            margin: 0;
+        }
+
+        .whatsapp a i {
+            box-shadow: 0px 0px 8px 0px #000;
+            background-color: #ffb73b;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        ::-webkit-scrollbar{
     width: 7px;
 }
 ::-webkit-scrollbar-track{
-    background-color: #000000ce;
+    background-color: #ffffffce;
 }
 ::-webkit-scrollbar-thumb{
-    background:  #ffb73b;
+    background:  #000000;
     border-radius: 3px;
 }
 
-/* loader css */
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                height: auto;
+                padding: 10px;
+            }
+            .logo{
+                height: 7px;
+               
+            }
+            nav .links {
+                display: none;
+            }
+            
+            .main {
+                margin-top: -950px;
+                flex-direction: column;
+                text-align: center;
+                gap :100px;
+            }
 
+            .main img{
+                max-width: 80%;
+            }
 
-.loader-container {
+            .head-text h1 {
+                font-size: 2rem;
+            }
+
+            .head-text h2 {
+                font-size: 1rem;
+            }
+
+            .work-comp h1 {
+                font-size: 1rem;
+            }
+
+            .card, .card3 {
+                height: auto;
+            }
+            .popup-content{
+                margin-top: 240px;
+            }
+        }
+
+        /* Loader styles */
+        .loader-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -326,15 +340,11 @@ border: 1px solid rgba(255, 255, 255, 0.46);
             transition: opacity 0.5s ease-out;
         }
 
-         .loader-container i{
+        .loader-container i {
             margin-bottom: 20px;
             animation: bounce 2s ease-in-out infinite;
-        } 
-        .tow-truck {
-            width: 120px;
-            height: 120px;
-            animation: bounce 2s ease-in-out infinite;
         }
+
         .loader-text {
             margin-top: 20px;
             font-size: 18px;
@@ -343,205 +353,91 @@ border: 1px solid rgba(255, 255, 255, 0.46);
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
+
         .main-content {
-            padding: 20px;
             display: none;
         }
-
- @media only screen and (max-width: 455px) {
-            body{
-                height: 100%;
-                width: 455px;
-            }
-           .back-block{
-           margin-top: 10px;
-            height: 1000px;
-            width: 1010px;
-            border-radius: 15px;
-            background: rgb(255,255,255);
-            background: linear-gradient(0deg, rgba(255,255,255,1) 13%, rgba(255,205,0,1) 61%, rgba(255,188,0,1) 100%); 
-           }
-           nav{
-            height: 70px;
-            position: sticky;
-            width:1000px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            gap: 100px;
-           }
-           nav .links{
-            display: none;
-           }
-          nav button{
-            font-size: 30px;
-          }
-           .popup-content{
-            margin: 18px 0;
-            padding: 100px;
-            margin-top: 500px;
-            height: 520px;
-            max-width: 700px;
-            border-radius: 40px;
-           }
-           .popup-content input{
-            margin: 50px 0;
-            height: 60px;
-            font-size: 20px;
-           }
-           .popup-content button{
-            font-size: 25px;
-           }
-           .main{
-            width:1000px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-top: -900px;
-            gap: 100px;
-           }
-           .head-text h1{
-            font-size: 70px;
-           }
-           .head-text h2{
-            font-size: 25px;
-           }
-           .main img{
-            height: 400px;
-            width: 650px;
-           }
-           .main button{
-            font-size: 30px;
-            margin-top: 30px;
-           }
-           .work-comp{
-            width: 930px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 50px;
-           }
-           .work-comp h1{
-            font-size: 35px;
-           }
-           .comp-img img{
-           height: 70px;
-           }
-          .info-product{
-            width: 950px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-          }
-          .info-product .card, .card3{
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 60px;
-            height: 600px;
-            width: 900px;
-            border-radius: 20px;
-          }
-          .card i{
-           border-bottom: 2px solid #ffb73b;
-          }
-          .card, .card3 h1{
-            font-size: 20px;
-          }
-          .card3 h2{
-            margin-bottom: 20px;
-            border-bottom: 2px solid #ffb73b;
-            font-size: 90px;
-          }
-          .card button{
-            background-color: #1c1c1c;;
-            border-radius: 50px;
-            font-size: 50px;
-            padding: 20px;
-            width: 370px;
-            box-shadow: 0px 8px 18px 0px #000000;
-          }
-          .card3 button{
-            background-color: #1c1c1c;;
-            border-radius: 50px;
-            font-size: 50px;
-            padding: 20px;
-            margin-top: -20px;
-            width: 370px;
-            box-shadow: 0px 8px 18px 0px #000000;
-          }
-          .not-main .whatsapp{
-            display: none;
-          }
-    
-     }
-        .not-main{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .whatsapp{
-            margin-top: 50px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 200px;
-            background-color: #000;
-            border:1.5px solid #000;
-            position: sticky;
-            border-radius: 100px;
-            border-bottom-left-radius: 10px;
-        }
-        .whatsapp h1{
-    
-            font-size: 13px;
-            color:#fff;
-        }
-        .whatsapp a i{
-            box-shadow: 0px 0px 8px 0px #000;
-            position: sticky;
-            background-color: #ffb73b;
-            border-radius: 50%;
-            padding: 10px;
-            margin-right: -50px;
-        }
-
-
     </style>
-
-<nav>
-    <div class="logo">
-        <a href="index.html"> <i class="fa-solid fa-truck-ramp-box fa-2xl" style="color: #ffb73b;"></i></a>
-        <a href="index.html"><h2>Speedy Assist</h2></a>
-        <!-- <i class="fa-solid fa-truck-ramp-box fa-2xl" style="color: #FFD43B;"></i>
-        <h2>Speedy Assist</h2> -->
-    </div>
-
-    <div class="links">
-        <a href="#">Home</a>
-        <a href="#ourwork">Our Work</a>
-        <a href="#">Home</a>
-        <a href="#">Home</a>
-        <a href="#">Home</a>
-    </div>
-    <button onclick="openPopup()">Login</button>
-    
-</nav>
-
 </head>
 <body>
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <i class="fa-solid fa-truck-ramp-box fa-2xl" style="color: #000;"></i>
+        <div class="loader-text">Loading Resources For You...</div>
+    </div>
 
-    <div class="back-block">
+    <!-- Main content -->
+    <div class="main-content" id="main-content">
+        <nav>
+            <div class="logo">
+                <a href="index.html"> <i class="fa-solid fa-truck-ramp-box fa-2xl" style="color: #ffb73b;"></i></a>
+                <a href="index.html"><h2>Speedy Assist</h2></a>
+            </div>
 
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#ourwork">Our Work</a>
+                <a href="#">Services</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <button onclick="openPopup()">Login</button>
+        </nav>
+
+        <div class="back-block"></div>
+
+        <div class="main">
+            <div class="head-text">
+                <h1>Welcome to Speedy Assist</h1>
+                <h2>Available 24/7 in your service all over India.</h2>
+                <button onclick="openPopup()">Get Started</button>
+            </div>
+            <img src="12892961_5098287-removebg.png" alt="Tow truck illustration">
+        </div>
+
+        <section id="ourwork">
+            <div class="work-comp">
+                <div class="comp-img">
+                    <img src="transport_14090802.png" alt="Transport">
+                    <img src="pngwing.com.png" alt="Service 1">
+                    <img src="pngwing.com (1).png" alt="Service 2">
+                    <img src="money_15642967.png" alt="Money">
+                    <img src="flipkart-logo-39916.png" alt="Flipkart">
+                    <img src="delivery-truck_6495283.png" alt="Delivery truck">
+                </div>
+                <h1>Our work and experience with companies.</h1>
+            </div>
+    
+            <div class="info-product">
+                <div class="card">
+                    <i class="fa-solid fa-motorcycle fa-4x" style="color: #FFD43B;"></i>
+                    <h1>We provide bike assistance on the spot wherever you are for your convenience...</h1> 
+                    <button onclick="openPopup()">Get Started</button>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-car-burst fa-4x" style="color: #FFD43B;"></i>
+                    <h1>There is no car problem that can't be fixed by us at your current location...</h1>
+                    <button onclick="openPopup()">Get Started</button>
+                </div>
+
+                <div class="card3">
+                    <h2>E<span style="color: greenyellow;">V</span></h2>
+                    <h1>An EV can also need road assistance and we are here for it. Just contact us...</h1>
+                    <button onclick="openPopup()">Get Started</button>
+                </div>
+            </div>
+
+            <div class="whatsapp">
+                <h1>Connect With Us!</h1>
+                <a href="https://chat.whatsapp.com/E68qyAseDGN9S3GmXXXq8d"> <i class="fa-brands fa-whatsapp fa-2x" style="color: #ffffff;"></i></a>
+            </div>  
+        </section>
     </div>
 
     <div id="loginPopup" class="popup">
@@ -561,8 +457,20 @@ border: 1px solid rgba(255, 255, 255, 0.46);
 
 
     <script>
+        
+        // Loader script
+        setTimeout(() => {
+            const loader = document.getElementById('loader');
+            const mainContent = document.getElementById('main-content');
+            
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+                mainContent.style.display = 'block';
+            }, 500);
+        }, 3000);
 
-        //login form js
+         //login form js
       const popup = document.getElementById('loginPopup');
       const popupContent = document.querySelector('.popup-content');
 
@@ -609,102 +517,6 @@ border: 1px solid rgba(255, 255, 255, 0.46);
               alert('An error occurred. Please try again.');
           });
       });
-
-      // Loader js
-      setTimeout(() => {
-            const loader = document.getElementById('loader');
-            const mainContent = document.getElementById('main-content');
-            
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-                mainContent.style.display = 'block';
-            }, 500);
-        }, 3000);
-
-
-
-  </script>
-
-  <!-- Loader html -->
-
-  <div class="loader-container" id="loader">
-   
-    <!-- <i class="fa-solid fa-earth-americas  fa-2xl" style="color: #000000;"></i> -->
-    <i class="fa-solid fa-truck-ramp-box fa-2xl" style="color: #000;"></i>
-    <div class="loader-text">Loading Resources For You...</div>
-</div>
-
-
-<div class="main-content" id="main-content">
-
-
-    <div class="main">
-        
-
-    <div class="head-text">
-        <h1>Weclome to speedy Assist.  </h1>
-        <h2>Available 24/7 in your service all over India.</h2>
-        <button onclick="openPopup()">Get Started</button>
-    </div>
-
-    
-    <!-- <video  loop autoplay>
-        <source src="Car Towing Service.mp4" type="video/mp4">
-    </video> -->
-
-    <img src="12892961_5098287-removebg.png" alt="">
-
-    </div>
-
-    <section id="ourwork">
-    <div class="work-comp">
-         <div class="comp-img">
-            
-            <img src="transport_14090802.png" alt="">
-             <img src="pngwing.com.png" alt="">
-            <img src="pngwing.com (1).png" alt="">
-            <img src="money_15642967.png" alt="">
-            <img src="flipkart-logo-39916.png" alt="">
-            <img src="delivery-truck_6495283.png" alt=""> 
-          </div>
-            <h1>
-                Our work and experience with companies.
-            </h1>
-    </div>
-    
-    <div class="info-product">
-       <div class="card">
-        <i class="fa-solid fa-motorcycle fa-8x" style="color: #FFD43B;"></i>
-         <h1>we provide bike assistance on the spot where ever you are for your convinience...</h1> 
-        <button onclick="openPopup()">Get Started</button>
-       </div>
-
-       <div class="card">
-        <i class="fa-solid fa-car-burst fa-8x" style="color: #FFD43B;"></i>
-        <h1>There is no any  car problem that can't be fixed by us at your current location...</h1>
-        <button onclick="openPopup()">Get Started</button>
-       </div>
-
-       <div class="card3">
-        <h2>E<span>V</span></h2>
-        <h1>An EV can also need road assistance and we are here for it just contact us...</h1>
-        <button onclick="openPopup()">Get Started</button>
-       </div>
-
-    </div>
- <div class="not-main">
-    <div class="whatsapp">
-        <h1>Connect With Us!</h1>
-        
-        <a href="https://chat.whatsapp.com/E68qyAseDGN9S3GmXXXq8d"> <i class="fa-brands fa-whatsapp  fa-2x" style="color: #ffffff;"></i></a>
-     </div>  
-</div>
-   </section>
-
-
-
-   </div>
-    
+    </script>
 </body>
 </html>
